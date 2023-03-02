@@ -27,8 +27,8 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    /* box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
 .info_box.activeInfo,
 .quiz_box.activeQuiz,
@@ -49,6 +49,12 @@ body{
     background: #fff;
     cursor: pointer;
 }
+.start_btn button:hover{
+    background: #102A39;
+    color: #ffffff;
+}
+
+
 .info_box{
     width: 540px;
     background: #fff;
@@ -299,16 +305,18 @@ footer button.show{
     margin-bottom: 10px;
 }
 .result_box .complete_text{
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 500;
 }
 .result_box .score_text span{
     display: flex;
+    align-items: center;
     margin: 10px 0;
     font-size: 18px;
     font-weight: 500;
 }
 .result_box .score_text span p{
+    align-items: center;
     padding: 0 4px;
     font-weight: 600;
 }
@@ -346,8 +354,8 @@ footer button.show{
     background: #fff;
 }
 .buttons button.quit:hover{
-    color: #fff;
-    background: #154B69;
+    color: #737373;
+    background: #fff;
 }
 
 
@@ -397,6 +405,7 @@ input[type="text"] {
     display: inline-block;
     padding: 10px 15px;
     border: 1px solid #ccc;
+    font-size: large;
     border-radius: 10px;
     /* margin-bottom: 20px; */
     width: calc(100% - 120px);
@@ -421,6 +430,23 @@ input[type="text"] {
     background: #154B69;
 }
 
+.button_submit {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #102A39;
+    color: #fff;
+    border: 1px solid #102A39;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-left: 0px; */
+    font-weight: 600;
+    height: 45px;
+    /* font-size: medium; */
+}
+.button_submit:hover{
+    background: #154B69;
+}
+
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
@@ -432,3 +458,28 @@ button:disabled {
     font-size: large;
     /* color: red; */
 }
+
+
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    flex: 1;
+  }
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    margin-left: 10px;
+    cursor: pointer;
+  }

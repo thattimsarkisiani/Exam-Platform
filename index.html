@@ -5,46 +5,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KIBERone - საგამოცდო ცენტრი</title>
+    <title>საგამოცდო | KIBERone</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-    <script src="acess_codes.js"></script>
+    <!-- <script src="https://examjot.fun/questions.js"></script> -->
+    <script src="access_keys.js"></script>
 
-<script>
-    window.onload = function() {
-      var headerText = topic; // assume questions is an object defined in questions.js that contains the header text
-      document.getElementById("myHeader").innerHTML = headerText;
-      document.getElementById("myHeaderTest").innerHTML = "ტესტირება: " + headerText;
+    <script>
+        window.onload = function() {
+            var headerText = topic; // assume questions is an object defined in questions.js that contains the header text
+            document.getElementById("myHeader").innerHTML = headerText;
+            document.getElementById("myHeaderTest").innerHTML = "ტესტირება: " + headerText;
     }
-  </script>
-
-<script src="access_keys.js"></script>
-
+    </script>
 </head>
 
 <body>
-    <!-- start Quiz button -->
-    <div class="start_btn" id=""><button>ტესტის დაწყება</button></div>
+    <div class="container">
+        <!-- start Quiz button -->
+        <div class="start_btn" id=""><button>ტესტის დაწყება</button></div>
     
     <!-- Info Box -->
     <div class="info_box">
         <div class="info-title" id="myHeaderTest"></div>
 
         <div class="info-list">
+            <label for="code"><strong>ტესტირების წესები</strong></label>
             <div class="info">1. თითოერულ კითვაზე პასუხის გასაცემად გაქვს <span>1 წუთი</span>.</div>
             <div class="info">2. პასუხის დაფიქსირების შემდეგ მას ვეღარ შეცვლი.</div>
             <div class="info">3. დროის ამოწურვის შემდეგ კითხვას ვერ უპასუხებ.</div>
 
             <br>
 
-            <label for="code"><strong>ტესტირების კოდი:</strong></label>
-	        <input type="text" id="code" name="code">
-	        <button onclick="searchName()" class="button_form">შემოწმება</button>
-	        <div id="result"></div>
-</body>
-
-            
-
+            <label for="code"><strong>ვერიფიკაცია</strong></label>
+            <div class="form-container">
+                <!-- <label for="code"><strong>ტესტირების კოდი:</strong></label> -->
+                <input type="text" id="code" name="code" placeholder="ჩაწერე ტესტირების კოდი">
+                <button onclick="searchName()" class="button_submit" type="submit">→</button>
+                
+              </div>
+              <div id="result"></div>
         </div>
 
         <div class="buttons">
@@ -76,27 +76,32 @@
             <div class="total_que">
                 <!-- Here I've inserted Question Count Number from JavaScript -->
             </div>
-            <button class="next_btn">შემდეგი</button>
+            <button class="next_btn" onclick="startConfetti();">შემდეგი</button>
         </footer>
     </div>
     <!-- Result Box -->
     <div class="result_box">
         <div class="icon">
-            <i class="fas fa-crown"></i>
+            <!-- <i class="fas fa-crown"></i> -->
+            <img src="done.png" width="200">
         </div>
-        <div class="complete_text">ტესტი დასრულებულია</div>
+        <div class="complete_text"><strong>ტესტი დასრულებულია</strong></div>
+        
         <div class="score_text">
             <!-- Here I've inserted Score Result from JavaScript -->
         </div>
         <div class="buttons">
+            <!-- <button onclick="startConfetti();">მომილოცე</button> -->
             <button class="restart" hidden>თავიდან</button>
-            <button class="quit">გამოსვლა</button>
+            <a href="#"><button class="quit" hidden>გამოსვლა</button></a>
         </div>
     </div>
     <!-- Inside this JavaScript file I've inserted Questions and Options only -->
     <script src="questions.js"></script>
     <!-- Inside this JavaScript file I've coded all Quiz Codes -->
     <script src="script.js"></script>
+    <script src="confetti.js"></script>
+    </div>
+    
 </body>
-</html>
 </html>

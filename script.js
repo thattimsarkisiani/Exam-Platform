@@ -56,7 +56,7 @@ restart_quiz.onclick = ()=>{
 }
 // if quitQuiz button clicked
 quit_quiz.onclick = ()=>{
-    window.location.reload(); //reload the current window
+    // window.location.reload(); //reload the current window
 }
 const next_btn = document.querySelector("footer .next_btn");
 const bottom_ques_counter = document.querySelector("footer .total_que");
@@ -134,19 +134,17 @@ function optionSelected(answer){
 function showResult(){
     info_box.classList.remove("activeInfo"); //hide info box
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
+    
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
-    if (userScore > 5){ // if user scored more than 3
+    if (userScore > 4){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
-        let scoreTag = '<span>იდეალურია! ყველა კითხვას სწორად უპასუხე!</span>';
+        let scoreTag = '<span>მშვენიერია! ' + userScore + '/' + questions.length + '</span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
-    }
-    else if(userScore > 10){ // if user scored more than 1
-        let scoreTag = '<span>მშვენიერია! სწორად უპასუხე <p>'+ userScore +'</p> კითხვას!<p></span>';
-        scoreText.innerHTML = scoreTag;
+        startConfetti()
     }
     else{ // if user scored less than 1
-        let scoreTag = '<span>სწორად უპასუხე <p>'+ userScore +'</p> კითხვას <p> '+ questions.length +'</p>-იდან.</span>';
+        let scoreTag = '<span>ცუდია... ' + userScore + '/' + questions.length + '</span>';
         scoreText.innerHTML = scoreTag;
     }
 }
